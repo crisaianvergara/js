@@ -9,4 +9,5 @@ var userOne = {
     }
 };
 
-console.log(userOne.name);
+userOne.name = "Aian";
+userOne["name"] = "Mario";
