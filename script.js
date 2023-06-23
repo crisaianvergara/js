@@ -1,14 +1,3 @@
-let p = new Promise((resolve, reject) => {
-    let a = 1 + 2;
-    if (a == 2) {
-        resolve('Success');
-    } else {
-        reject('Failed');
-    }
-});
+const userLeft = false;
+const userWatchingCatMeme = false;
 
-p.then((message) => {
-    console.log('This is in the then ' + message);
-}).catch((message) => {
-    console.log('This is in the catch ' + message);
-});
