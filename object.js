@@ -14,9 +14,22 @@ User.prototype.logout = function() {
     console.log(this.email +' has logged out');
 }
 
+function Admin(...args) {
+    User.apply(this, [args])
+    this.role = "superuser";
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(u) {
+    users = users.filter(user => {
+        return user.email != u.email;
+    });
+};
+
 
 var userOne = new User('cris@gmail.com', 'Cris-aian Vergara');
 var userTwo = new User('ben@gmail.com', 'Ben Ten');
+var admin = new Admin('anna@gmail.com', 'Anna Smith');
 
-console.log(userOne);
-userTwo.login();
+var users = [userOne, userTwo, admin];
